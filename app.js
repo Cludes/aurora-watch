@@ -61,6 +61,7 @@ async function load() {
 
     renderVerdict(kp, bz);
     renderScale(kp);
+    renderHistory(kpArr);
     renderRegions(kp);
     renderTiles(kp, bz, speed, density);
     renderForecast(fcArr);
@@ -104,6 +105,20 @@ function renderScale(kp) {
     const lab = document.createElement('span'); lab.textContent = i; seg.appendChild(lab);
     scale.appendChild(seg);
   }
+}
+
+function renderHistory(kpArr) {
+  const el = document.getElementById('kp-history');
+  if (!el) return;
+  const last = kpArr.slice(-8); // 8 x 3h = last 24 hours
+  if (!last.length) { el.innerHTML = ''; return; }
+  const bars = last.map(d => {
+    const k = num(d.Kp) ?? 0;
+    const t = new Date(d.time_tag);
+    const hh = isNaN(t) ? '' : t.toLocaleTimeString('en-AU', { hour: '2-digit', hour12: false });
+    return `<div class="kh-bar" title="Kp ${k.toFixed(1)} @ ${hh}"><div class="kh-fill" style="height:${Math.max(6, (k / 9) * 100)}%;background:${kpColor(k)}"></div></div>`;
+  }).join('');
+  el.innerHTML = `<div class="kh-label">Last 24 hours</div><div class="kh-bars">${bars}</div>`;
 }
 
 function renderRegions(kp) {

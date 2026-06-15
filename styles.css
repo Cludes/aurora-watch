@@ -44,6 +44,13 @@ header .sub { font-size: 13px; color: var(--dim); }
 .kp-seg { flex: 1; height: 26px; border-radius: 4px; display: flex; align-items: flex-end; justify-content: center; transition: opacity 0.3s; }
 .kp-seg span { font-size: 9px; color: #00000099; font-weight: 700; padding-bottom: 2px; }
 
+/* 24h Kp history sparkline */
+.kp-history { margin-top: 14px; }
+.kh-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--dim); margin-bottom: 6px; }
+.kh-bars { display: flex; align-items: flex-end; gap: 4px; height: 38px; }
+.kh-bar { flex: 1; height: 100%; display: flex; align-items: flex-end; background: rgba(255,255,255,0.04); border-radius: 3px; overflow: hidden; }
+.kh-fill { width: 100%; border-radius: 3px; transition: height 0.4s; }
+
 /* Regions */
 .regions { display: flex; flex-direction: column; gap: 2px; }
 .region { display: flex; align-items: center; gap: 10px; padding: 8px 4px; border-bottom: 1px solid var(--border); }
