@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Can you see the aurora australis tonight? Live space-weather verdict for every Australian state." />
+  <title>Aurora Watch - Australia</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#070b16" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="bg"></div>
+  <main id="app">
+    <header>
+      <span class="pulse"></span>
+      <div>
+        <h1>Aurora Watch</h1>
+        <div class="sub">Aurora Australis · Australia</div>
+      </div>
+    </header>
+
+    <section id="verdict" class="card">
+      <div class="v-label">Tonight's outlook</div>
+      <div id="v-text" class="v-text">Loading…</div>
+      <div id="v-sub" class="v-sub"></div>
+      <div class="kp-wrap">
+        <div class="kp-now">Kp <span id="kp-val">–</span></div>
+        <div id="kp-scale" class="kp-scale"></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="v-label">Chances by state (now)</div>
+      <div id="regions" class="regions"></div>
+    </section>
+
+    <section class="tiles">
+      <div class="card tile"><div class="tk">Planetary Kp</div><div id="t-kp" class="tv">–</div><div class="tu">geomagnetic activity</div></div>
+      <div class="card tile"><div class="tk">Bz (IMF)</div><div id="t-bz" class="tv">–</div><div class="tu">south = good</div></div>
+      <div class="card tile"><div class="tk">Solar wind</div><div id="t-spd" class="tv">–</div><div class="tu">km/s</div></div>
+      <div class="card tile"><div class="tk">Density</div><div id="t-den" class="tv">–</div><div class="tu">protons/cm³</div></div>
+    </section>
+
+    <section class="card">
+      <div class="v-label">3-day Kp forecast (NOAA)</div>
+      <div id="forecast" class="forecast"></div>
+    </section>
+
+    <footer>
+      <span id="updated"></span>
+      <span>Data: <a href="https://www.swpc.noaa.gov/" target="_blank" rel="noopener">NOAA SWPC</a> · DSCOVR · no API key</span>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
