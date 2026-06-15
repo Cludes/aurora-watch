@@ -17,4 +17,4 @@ Static site on Cloudflare Pages. The GitHub Action (`.github/workflows/deploy-cf
 ships it to the `aurora-watch` Pages project on every push to `master`
 (secrets `CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID`).
 
-Live: https://aurora-watch-6xp.pages.dev  (Cloudflare auto-suffixed - `aurora-watch.pages.dev` was taken globally)
+Live: https://aurora-australia.pages.dev
